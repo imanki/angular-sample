@@ -12,12 +12,18 @@ export class CandidateComponent implements OnInit{
      isMaleChecked=false;
     isFemaleChecked=false;
     candidate:Candidate=new Candidate();
-
+     searchText="";
 
 
   ngOnInit(){
-   // console.log(this.products[0]);
 
+  }
+
+  search(){
+  if(this.searchText!=""){
+   this.candidates= this.candidates.filter(
+      a=> (a.first_name==this.searchText) || (a.last_name==this.searchText) || (a.email==this.searchText))
+  }
   }
 
   addNewRecord(){
