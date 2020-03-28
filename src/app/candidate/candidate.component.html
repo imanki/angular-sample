@@ -1,1 +1,23 @@
-HI This is HTML
+<input type="checkbox" id="vehicle1" name="Male"
+(change)="toggleVisibility($event)"  value="Male">
+<label for="vehicle1"> Male</label>
+<input type="checkbox" id="vehicle2" name="Female" 
+(change)="toggleVisibility($event)" value="Female">
+<label for="vehicle2"> Female</label><br>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>Gender</th>
+  </tr>
+  <tr *ngFor="let candidate of candidates">
+    <td>{{candidate.id}}</td>
+    <td>{{candidate.first_name}}</td>
+    <td>{{candidate.last_name}}</td>
+    <td>{{candidate.email}}</td>
+    <td>{{candidate.gender}}</td>
+  </tr>
+</table>
