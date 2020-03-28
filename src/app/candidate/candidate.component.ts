@@ -23,6 +23,8 @@ export class CandidateComponent implements OnInit{
   if(this.searchText!=""){
    this.candidates= this.candidates.filter(
       a=> (a.first_name==this.searchText) || (a.last_name==this.searchText) || (a.email==this.searchText))
+  }else if(this.searchText==""){
+this.candidates= JSON.parse(JSON.stringify( this.originalCandidateList));
   }
   }
 
