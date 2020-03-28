@@ -11,12 +11,19 @@ export class CandidateComponent implements OnInit{
      originalCandidateList= JSON.parse(JSON.stringify( this.candidates));
      isMaleChecked=false;
     isFemaleChecked=false;
+    candidate:Candidate=new Candidate();
 
 
 
   ngOnInit(){
    // console.log(this.products[0]);
 
+  }
+
+  addNewRecord(){
+    this.candidate.id= Math.floor(Math.random() * Math.floor(80));
+    this.candidates.push(this.candidate);
+    this.candidate=new Candidate();
   }
 
   toggleVisibility(e){
